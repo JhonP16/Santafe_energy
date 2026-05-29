@@ -1,0 +1,15 @@
+# Despliegue del backend (FastAPI) en Render (plan gratuito).
+# Crea un Web Service apuntando a este repositorio; Render leerá este archivo.
+services:
+  - type: web
+    name: santafe-energy-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      # URL del frontend desplegado (separar por comas si hay varias).
+      # Configurar su valor en el panel de Render tras desplegar el frontend.
+      - key: CORS_ORIGINS
+        sync: false

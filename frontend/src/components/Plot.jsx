@@ -1,8 +1,28 @@
-// Wrapper de Plotly usando la distribución reducida (plotly.js-dist-min)
-// para mantener el bundle más liviano que el paquete completo.
-import Plotly from 'plotly.js-dist-min'
-import createPlotlyComponent from 'react-plotly.js/factory'
+import { lazy, Suspense } from 'react'
 
-const Plot = createPlotlyComponent(Plotly)
+// Plotly es pesado (~1.5 MB gzip). Se carga como chunk independiente y solo
+// cuando se monta una gráfica, manteniendo liviano el bundle inicial.
+const LazyPlot = lazy(() =>
+  Promise.all([
+    import('plotly.js-dist-min'),
+    import('react-plotly.js/factory'),
+  ]).then(([plotly, factory]) => ({
+    default: factory.default(plotly.default),
+  })),
+)
 
-export default Plot
+// Envoltura con su propio límite de Suspense: mientras Plotly se descarga,
+// solo el área de la gráfica muestra el spinner (los filtros permanecen).
+export default function Plot(props) {
+  return (
+    <Suspense
+      fallback={
+        <div className="state">
+          <div className="spinner" />
+        </div>
+      }
+    >
+      <LazyPlot {...props} />
+    </Suspense>
+  )
+}

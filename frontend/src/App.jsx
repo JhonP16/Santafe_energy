@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
+import { Loader } from './components/ui'
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -20,7 +21,9 @@ export default function App() {
       {menuOpen && <div className="backdrop" onClick={() => setMenuOpen(false)} />}
 
       <main className="content">
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   )
