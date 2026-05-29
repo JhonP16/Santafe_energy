@@ -4,6 +4,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import App from './App'
 import PricesPage from './pages/PricesPage'
 import GenerationPage from './pages/GenerationPage'
+import DemandPage from './pages/DemandPage'
 import ComingSoonPage from './pages/ComingSoonPage'
 import './index.css'
 
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <Navigate to="/precios" replace /> },
       { path: 'precios', element: <PricesPage /> },
       { path: 'generacion', element: <GenerationPage /> },
-      { path: 'demanda', element: <ComingSoonPage title="Panel de demanda" /> },
+      { path: 'demanda', element: <DemandPage /> },
       { path: 'volumen-util', element: <ComingSoonPage title="Volumen útil" /> },
     ],
   },

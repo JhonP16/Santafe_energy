@@ -213,6 +213,51 @@ input:focus, select:focus {
   outline-offset: -1px;
 }
 
+/* ---------- Combobox buscable ---------- */
+.search-select {
+  position: relative;
+  min-width: 320px;
+}
+
+.search-select input {
+  width: 100%;
+}
+
+.search-select-list {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.search-select-list li {
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.search-select-list li:hover,
+.search-select-list li.active {
+  background: var(--green-50);
+  color: var(--green-700);
+}
+
+.search-select-empty {
+  color: var(--text-muted);
+  cursor: default !important;
+}
+
 /* ---------- Estados (carga / error / vacío) ---------- */
 .state {
   display: flex;

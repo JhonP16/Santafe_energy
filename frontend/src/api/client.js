@@ -28,5 +28,7 @@ export const api = {
   getPrices: (day) => request(`/prices?day=${day}`),
   getGeneration: (start, end, limit = 10) =>
     request(`/generation?start=${start}&end=${end}&limit=${limit}`),
+  getDemand: (agent, start, end) =>
+    request(`/demand?agent=${encodeURIComponent(agent)}&start=${start}&end=${end}`),
   getComercializadores: () => request('/catalog/comercializadores'),
 }
