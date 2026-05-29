@@ -1,4 +1,4 @@
-# Santafé Energy ⚡
+# Santafé Energy 
 
 Aplicación web de página única (**SPA**) que consume la **API pública de XM**
 (operador del mercado eléctrico colombiano) y presenta cuatro paneles
@@ -151,3 +151,6 @@ El proyecto incluye configuración lista para hosting gratuito:
   URL del backend desplegado. (También incluye `public/_redirects` para Netlify.)
 
 > 🔗 **Demo en vivo:** _pendiente de despliegue — se actualizará el enlace aquí._
+
+
+## Este readme fue realizado con ayuda de Claude.
