@@ -14,6 +14,13 @@ analíticos del sector energético:
    (`PorcVoluUtilDiar`) en el último día registrado, con alertas en rojo para
    niveles inferiores al 30%.
 
+## Sobre el despliegue realizado
+
+Se desplegó el servicio en *Render* y el front en *Vercel*
+
+Link: santafe-energy.vercel.app
+
+
 ## Descripción técnica
 
 El proyecto está dividido en dos componentes desacoplados:
