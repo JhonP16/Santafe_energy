@@ -17,7 +17,12 @@ export function toISODate(date) {
 }
 
 export function yesterday() {
+  return daysAgo(1)
+}
+
+// Devuelve la fecha de hace `n` días como 'YYYY-MM-DD'.
+export function daysAgo(n) {
   const d = new Date()
-  d.setDate(d.getDate() - 1)
+  d.setDate(d.getDate() - n)
   return toISODate(d)
 }

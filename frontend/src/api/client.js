@@ -26,5 +26,7 @@ async function request(path) {
 
 export const api = {
   getPrices: (day) => request(`/prices?day=${day}`),
+  getGeneration: (start, end, limit = 10) =>
+    request(`/generation?start=${start}&end=${end}&limit=${limit}`),
   getComercializadores: () => request('/catalog/comercializadores'),
 }

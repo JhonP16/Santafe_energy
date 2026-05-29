@@ -5,9 +5,10 @@ check, y los demás se irán añadiendo de forma incremental.
 """
 from fastapi import APIRouter
 
-from app.api.routes import catalog, health, prices
+from app.api.routes import catalog, generation, health, prices
 
 api_router = APIRouter()
 api_router.include_router(health.router)
 api_router.include_router(catalog.router)
 api_router.include_router(prices.router)
+api_router.include_router(generation.router)
