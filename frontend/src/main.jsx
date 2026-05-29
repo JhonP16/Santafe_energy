@@ -5,7 +5,7 @@ import App from './App'
 import PricesPage from './pages/PricesPage'
 import GenerationPage from './pages/GenerationPage'
 import DemandPage from './pages/DemandPage'
-import ComingSoonPage from './pages/ComingSoonPage'
+import ReservoirsPage from './pages/ReservoirsPage'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { path: 'precios', element: <PricesPage /> },
       { path: 'generacion', element: <GenerationPage /> },
       { path: 'demanda', element: <DemandPage /> },
-      { path: 'volumen-util', element: <ComingSoonPage title="Volumen útil" /> },
+      { path: 'volumen-util', element: <ReservoirsPage /> },
     ],
   },
 ])

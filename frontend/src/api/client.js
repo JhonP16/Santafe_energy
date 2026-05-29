@@ -30,5 +30,6 @@ export const api = {
     request(`/generation?start=${start}&end=${end}&limit=${limit}`),
   getDemand: (agent, start, end) =>
     request(`/demand?agent=${encodeURIComponent(agent)}&start=${start}&end=${end}`),
+  getReservoirs: () => request('/reservoirs'),
   getComercializadores: () => request('/catalog/comercializadores'),
 }
