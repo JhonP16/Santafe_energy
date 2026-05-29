@@ -132,25 +132,5 @@ La aplicación abre en `http://localhost:5173`. En desarrollo, las peticiones a
 | `GET` | `/api/reservoirs` | Volumen útil de embalses (último día) |
 | `GET` | `/api/catalog/comercializadores` | Listado de agentes comercializadores |
 
-## Manejo de errores
 
-El backend centraliza el manejo de excepciones: ante fallos de la API de XM
-(timeout, error HTTP, respuesta inválida) o ausencia de datos, responde con un
-JSON consistente (`{"detail": "..."}`) y un mensaje claro que el frontend
-muestra al usuario. También valida el rango máximo de 30 días de la API.
-
-## Despliegue
-
-El proyecto incluye configuración lista para hosting gratuito:
-
-- **Backend → [Render](https://render.com/):** el archivo `render.yaml` define el
-  Web Service. Tras crearlo, configurar la variable de entorno `CORS_ORIGINS`
-  con la URL del frontend desplegado.
-- **Frontend → [Vercel](https://vercel.com/):** `frontend/vercel.json` configura
-  el build de Vite y el enrutado SPA. Definir la variable `VITE_API_URL` con la
-  URL del backend desplegado. (También incluye `public/_redirects` para Netlify.)
-
-> 🔗 **Demo en vivo:** _pendiente de despliegue — se actualizará el enlace aquí._
-
-
-## Este readme fue realizado con ayuda de Claude.
+### Este readme fue realizado con ayuda de Claude.
